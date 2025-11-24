@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-#ifndef CUSTOMER_H
+#ifndef CUSTOMER_H 
 #define CUSTOMER_H
 
 class Customer {
@@ -25,6 +25,9 @@ public:
     string getLastName();
     void setLastName(string n);
 
+    string getDateOfBirth();
+    void setDateOfBirth(string n);
+
     string getEmail();
     void setEmail(string n);
 
@@ -43,16 +46,20 @@ public:
     string getState();
     void setState(string n);
 
-    string getZipCode();
-    void setZipCode(string n);
+    int getZipCode();
+    void setZipCode(int n);
 
-    // NOTE: No timestamps are yet created for header files. Need to be integrated
+    string getCreatedAt();
+    void setCreatedAt(string n);
 
+    void printCustomerInfo();
+    
 private:
     int customerID;
     string customerPassword;
     string firstName;
     string lastName;
+    string dob;
     string email;
     string phoneNumber;
     string addressLine1;
@@ -60,6 +67,6 @@ private:
     string city;
     string state;
     int zipCode;
-    //Time variable goes here
+    string createdAt;
 };
 #endif

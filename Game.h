@@ -1,5 +1,4 @@
 #include <string>
-#include <ctime>
 using namespace std;
 
 #ifndef GAME_H
@@ -9,6 +8,9 @@ class Game {
 public:
     //Constructor
     Game();
+
+    //Destructor
+    ~Game();
 
     //Enum for platform
     enum Platform {
@@ -36,16 +38,19 @@ public:
     string getPublisher();
     void setPublisher(string n);
 
-    //Release date functions here
+    string getReleaseDate();
+    void setReleaseDate(string n);
 
     float getBaseRentalPrice();
     void setBaseRentalPrice(float f);
 
-    //Created at functions here
+    string getCreatedAt();
+    void setCreatedAt(string n);
 
-    //Updated at functions here
+    string getUpdatedAt();
+    void setUpdatedAt(string n);
 
-    //Create, delete, print here
+    void printGameInfo();
 
 private:
     int gameID;
@@ -54,10 +59,10 @@ private:
     string genre;
     string rating;
     string publisher;
-    //release date
+    string releaseDate;
     float baseRentalPrice;
-    //createdAt
-    //updatedAt
+    string createdAt;
+    string updatedAt;
 };
 
 #endif

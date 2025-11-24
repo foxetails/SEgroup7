@@ -8,8 +8,11 @@ using namespace std;
 
 class Staff {
 public:
-    //Constructor
+    //Default Constructor
     Staff();
+
+    //Destructor 
+    ~Staff();
 
     //Role enumerator defined here
     enum Role {
@@ -39,9 +42,15 @@ public:
     Role getRole();
     void setRole(Role r);
 
-    //Insert createdAt functions here
+    //For simplicity, dates are stored in DD-MM-YYYY format as strings
+    string getCreatedAt();
+    void setCreatedAt(string d);
 
-    //Insert create, delete, print functions here
+    float getHourlyPay();
+    void setHourlyPay(float n);
+
+    //Likely need print functions as well
+    void printStaffInfo();
 
 private:
     int ID;
@@ -51,8 +60,8 @@ private:
     string email;
     string phoneNumber;
     Role role;
-    //CreatedAt value
-
+    string createdAt;
+    float hourlyPay;
 };
 
 #endif

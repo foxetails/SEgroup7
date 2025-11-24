@@ -1,4 +1,4 @@
-#include <ctime>
+#include <string>
 using namespace std;
 
 #ifndef RENTAL_H
@@ -8,6 +8,9 @@ class Rental {
 public:
     //Constructor
     Rental();
+
+    //Destructor
+    ~Rental();
 
     //Status enum
     enum Status {
@@ -26,11 +29,14 @@ public:
     int getCustomerID();
     void setCustomerID(int n);
 
-    //Getrentdate
+    string getRentDate();
+    void setRentDate(string n);
 
-    //Getduedate
+    string getDueDate();
+    void setDueDate(string n);
 
-    //getReturndate
+    string getReturnDate();
+    void setReturnDate(string n);
 
     Status getStatus();
     void setStatus(Status s);
@@ -38,15 +44,15 @@ public:
     float getLateFeeAccrued();
     void setLateFeeAccrued(float f);
 
-    //delete, print
+    void printRentalInfo();
 
 private:
     int rentalID;
-    int copyID;
+    int copyID; //Referring to specific id of game
     int customerID;
-    //rentDate
-    //dueDate
-    //returnDate
+    string rentDate;
+    string dueDate;
+    string returnDate;
     Status status;
     float lateFeeAccrued;
 };
