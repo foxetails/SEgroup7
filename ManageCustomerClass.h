@@ -1,6 +1,7 @@
-
+// ManageCustomerClass.h
 #include "Customer.h"
-using namespace std;
+#include <vector>
+
 
 #ifndef MANAGECUSTOMERCLASS_H
 #define MANAGECUSTOMERCLASS_H    
@@ -8,31 +9,18 @@ using namespace std;
 
 class ManageCustomerClass
 {
+private:
+    vector<Customer> userProfiles;
 
 public:
-
-    // Constructor
     ManageCustomerClass();
-    // Destructor
-    ~ManageCustomerClass();
+    void addCustomer(const Customer& customer);
+    void updateCustomer(const string& customerId, const Customer& updatedCustomer);
+    void deleteCustomer(const string& customerId);
 
-    // Member Functions
-    void AddCustomerProfile();
-    void EditCustomerProfile();
-    void DeleteCustomerProfile();
-    void SearchCustomerProfile();
-    
-
-
-    //could be used later for file handling for games
-    //  void GamesFromFile(const string& filename);
-
-    
-private:
-
-    // Private Member Variables
-  
 
 }
+
+
 
 #endif

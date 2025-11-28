@@ -1,5 +1,8 @@
+// ManageCustomerClass.cpp
 #include "ManageCustomerClass.h"
 #include <iostream>
+using namespace std;
+
 
 void ManageCustomerClass::addCustomer(const Customer& customer) {
     customers.push_back(customer);
@@ -7,7 +10,7 @@ void ManageCustomerClass::addCustomer(const Customer& customer) {
 }
 
 void ManageCustomerClass::removeCustomer(int customerId) {
-    customers.erase(std::remove_if(customers.begin(), customers.end(),
+    customers.erase(remove_if(customers.begin(), customers.end(),
                                    [customerId](const Customer& c) { return c.getId() == customerId; }),
                     customers.end());
 }
